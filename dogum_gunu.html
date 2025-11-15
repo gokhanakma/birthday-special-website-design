@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İyi ki Doğdun Kıvırcığımm ♡</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(120deg, #ff9a9e, #fecfef, #f6d365, #fda085);
+      background-size: 300% 300%;
+      animation: gradientMove 12s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      position: relative;
+      width: min(90%, 650px);
+      padding: 28px 24px 32px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 4vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+
+    .name {
+      color: #ffe082;
+      text-shadow: 0 0 12px rgba(255, 252, 199, 0.8);
+    }
+
+    .subtitle {
+      font-size: 0.98rem;
+      opacity: 0.95;
+      margin-bottom: 18px;
+    }
+
+    .typewriter-box {
+      margin: 18px auto 20px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.22);
+      min-height: 80px;
+      text-align: left;
+      font-size: 0.98rem;
+      line-height: 1.5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #typewriter::after {
+      content: "|";
+      display: inline-block;
+      margin-left: 3px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
+
+    .bottom-text {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      margin-top: 5px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 0.98rem;
+      font-weight: 600;
+      background: linear-gradient(120deg, #ff6f91, #ff9671);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(255, 111, 145, 0.45);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 14px 30px rgba(255, 111, 145, 0.6);
+      filter: brightness(1.05);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: 0 9px 18px rgba(255, 111, 145, 0.4);
+    }
+
+    .hidden-message {
+      margin-top: 18px;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.45s ease;
+    }
+
+    .hidden-message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hidden-message span.highlight {
+      color: #ffe082;
+      font-weight: 600;
+    }
+
+    /* Yüzen kalpler */
+    .hearts {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -40px;
+      font-size: 18px;
+      animation: floatUp 8s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) translateX(0) scale(0.8);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) translateX(40px) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* Küçük ekranlar */
+    @media (max-width: 480px) {
+      .card {
+        padding: 22px 18px 26px;
+      }
+      .typewriter-box {
+        font-size: 0.92rem;
+      }
+    }
+    /* ==== HAVAİ FİŞEK EFEKTİ ==== */
+.firework {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  animation: explode 1s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0.4) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(-50px);
+    opacity: 0;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Yüzen kalpler -->
+  <div class="hearts" id="hearts-container">
+    <!-- JS ile dinamik doldurulacak -->
+  </div>
+<div id="fireworks"></div>
+
+  <div class="card">
+    <!-- İSMİ BURAYA YAZABİLİRSİN -->
+    <!-- Örnek: Canım Elif, İyi ki Doğdun -->
+    <h1><span class="name">İyi ki doğdun</span> 💫</h1>
+    <p class="subtitle">
+      Bu küçük siteyi senin için ben kodladım. Daha yazılımda yeniyim ama
+      <strong>her satırında seni düşündüm</strong> 💻❤️
+    </p>
+
+    <div class="typewriter-box">
+      <div id="typewriter"></div>
+    </div>
+
+    <p class="bottom-text">
+      Aşağıdaki butona tıklayınca bugünle ilgili, kalbimden geçenleri biraz daha dürüst anlatacağım... 💌
+    </p>
+
+    <button class="btn" id="wishButton">Sürprize tıkla 🎁</button>
+
+    <div class="hidden-message" id="hiddenMessage">
+      <!-- Buradaki yazıları tamamen kendine göre değiştirebilirsin -->
+      <p>
+        Bu yılın en güzel kısmı, <span class="highlight">seninle tanışmak</span> oldu.
+        Belki her şeyi mükemmel yapamıyorum ama
+        <span class="highlight">seni mutlu etmek</span> için gerçekten uğraşıyorum.
+      </p>
+      <p style="margin-top: 10px;">
+        İyi ki varsın, iyi ki doğdun, iyi ki hayatımdasın kıvırcığımm.  
+        Bugün sadece senin günün. Umarım bu minicik site bile yüzünde
+        <span class="highlight">küçük bir gülümseme</span> bırakır. 🫶
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // ==== HAVAİ FİŞEK OLUŞTURMA ====
+const fireworksContainer = document.getElementById("fireworks");
+
+function createFirework() {
+  const fw = document.createElement("div");
+  fw.classList.add("firework");
+
+  // Rastgele pozisyon
+  fw.style.left = Math.random() * 100 + "vw";
+  fw.style.top = (Math.random() * 60 + 20) + "vh";
+
+  fireworksContainer.appendChild(fw);
+
+  setTimeout(() => {
+    fw.remove();
+  }, 1000);
+}
+
+// ==== PASTA EMOJİSİ EK OLARAK GEÇSİN ====
+function createCake() {
+  const cake = document.createElement("div");
+  cake.classList.add("heart"); 
+  cake.textContent = "🎂";
+
+  cake.style.left = Math.random() * 100 + "vw";
+  cake.style.fontSize = (22 + Math.random() * 10) + "px";
+
+  heartsContainer.appendChild(cake);
+
+  setTimeout(() => cake.remove(), 6000);
+}
+
+// ==== DÖNGÜLER ====
+
+// Her 2 saniyede bir havaifişek patlasın
+setInterval(createFirework, 2000);
+
+// Her 5 saniyede bir pasta emojisi uçsun
+setInterval(createCake, 5000);
+
+    // ===== İSMİNİ BURAYA YAZ (sitede bir yerde kullanmak istersen) =====
+    // Örnek: const herName = "Elif";
+    const herName = ""; // İstersen boş bırak, yazmak zorunda değilsin.
+
+    // Başlığı isme göre ayarla (herName boş değilse)
+    if (herName.trim() !== "") {
+      document.querySelector("h1").innerHTML =
+        `<span class="name">İyi ki doğdun ${herName}</span> 💫`;
+      document.title = `İyi ki Doğdun ${herName} ♡`;
+    }
+
+    // ===== Typewriter yazısı =====
+    const lines = [
+      "Bugün sıradan bir gün değil...",
+      "Bugün, dünyaya en değer verdiğim insanlardan birinin 'merhaba' dediği gün 💗",
+      "",
+      "Belki süper bir yazılımcı değilim daha,",
+      "ama kalbimden geçenleri böyle küçük bir siteyle anlatmak istedim.",
+      "",
+      "İyi ki doğdun iyikii benimlesinn kıvırcığımmm",
+      herName.trim() ? `İyi ki doğdun, ${herName} 💫` : "İyi ki doğdun, iyi ki varsın 💫"
+    ];
+
+    const typewriterEl = document.getElementById("typewriter");
+    let lineIndex = 0;
+    let charIndex = 0;
+    const typingSpeed = 40;   // Harf hızı (ms)
+    const linePause = 700;    // Satır arası bekleme
+
+    function type() {
+      if (lineIndex >= lines.length) return;
+
+      const currentLine = lines[lineIndex];
+
+      if (charIndex < currentLine.length) {
+        typewriterEl.innerHTML += currentLine.charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingSpeed);
+      } else {
+        typewriterEl.innerHTML += "<br>";
+        charIndex = 0;
+        lineIndex++;
+        setTimeout(type, linePause);
+      }
+    }
+
+    type();
+
+    // ===== Sürpriz butonu & gizli mesaj =====
+    const wishButton = document.getElementById("wishButton");
+    const hiddenMessage = document.getElementById("hiddenMessage");
+
+    wishButton.addEventListener("click", () => {
+      hiddenMessage.classList.add("show");
+      createHeartsBurst();
+      wishButton.disabled = true;
+      wishButton.textContent = "İyi ki doğdun 💖";
+    });
+
+    // ===== Yüzen kalpler üretimi =====
+    const heartsContainer = document.getElementById("hearts-container");
+
+    function createHeart(xPosition) {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤";
+      const randomLeft = xPosition !== undefined
+        ? xPosition
+        : Math.random() * 100;
+      const randomDelay = Math.random() * 5;
+      const randomDuration = 6 + Math.random() * 4;
+      const randomSize = 16 + Math.random() * 16;
+
+      heart.style.left = randomLeft + "vw";
+      heart.style.animationDelay = randomDelay + "s";
+      heart.style.animationDuration = randomDuration + "s";
+      heart.style.fontSize = randomSize + "px";
+
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, (randomDuration + randomDelay) * 1000);
+    }
+
+    // Sürekli az az kalp aksın
+    setInterval(() => {
+      createHeart();
+    }, 1300);
+
+    // Butona basınca ekstra kalp patlaması
+    function createHeartsBurst() {
+      for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+          createHeart(Math.random() * 100);
+        }, i * 80);
+      }
+    }
+
+    // ===== İsteğe bağlı: Arka planda müzik (mp3 dosyan olursa aç) =====
+    // Kendi mp3 dosyanı aynı klasöre koyup ismini "muzik.mp3" yaparsan kullanabilirsin.
+    /*
+    const audio = new Audio("muzik.mp3");
+    audio.volume = 0.4;
+    wishButton.addEventListener("click", () => {
+      audio.play().catch(() => {});
+    });
+    */
+  </script>
+</body>
+</html>
